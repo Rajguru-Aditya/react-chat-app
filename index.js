@@ -4,7 +4,7 @@ const http = require('http');
 const cors = require('cors');
 const {addUser, getUser, removeUser, getUsersInRoom} = require('./users.js');
 
-const PORT = process.env.PORT || 5000;
+const PORT = (process.env.PORT || 3000);
 
 const router = require('./router');
 
@@ -56,4 +56,3 @@ io.on('connection', (socket) => {
 app.use(router);
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
-
